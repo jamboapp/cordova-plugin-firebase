@@ -94,9 +94,6 @@ exports.getValue = function (key, namespace, success, error) {
     var args = [key];
     if (typeof namespace === 'string') {
         args.push(namespace);
-    } else {
-        error = success;
-        success = namespace;
     }
     exec(success, error, "FirebasePlugin", "getValue", args);
 };
@@ -113,9 +110,6 @@ exports.setDefaults = function (defaults, namespace, success, error) {
     var args = [defaults];
     if (typeof namespace === 'string') {
         args.push(namespace);
-    } else {
-        error = success;
-        success = namespace;
     }
     exec(success, error, "FirebasePlugin", "setDefaults", args);
 };
